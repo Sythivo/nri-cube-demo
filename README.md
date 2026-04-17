@@ -1,8 +1,8 @@
 # NRI Cube Demo
 
-This is a simple demo of rendering a colored spinning cube using [NRI](https://github.com/NVIDIA-RTX/NRI) in [Zig](https://ziglang.org/).
+This is a simple demo of rendering a colored spinning cube using [NRI](https://github.com/NVIDIA-RTX/NRI) in [Zig](https://ziglang.org/). ([zig-nri](https://github.com/Scythe-Technology/zig-nri))
 
-![demo](assets/demo.png)
+![demo](assets/sample.png)
 
 ## Testing
 Run the demo directly:
