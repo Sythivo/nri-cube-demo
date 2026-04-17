@@ -51,6 +51,7 @@ pub fn main(init: std.process.Init) !void {
     const device = try nri.DeviceCreation.createDevice(.{
         .graphics_api = .VK,
         .enable_graphics_api_validation = true,
+        .enable_nri_validation = true,
     });
     defer nri.DeviceCreation.destroyDevice(device);
 
@@ -114,6 +115,7 @@ pub fn main(init: std.process.Init) !void {
         .root_constants = &.{
             .constant(CubeShader.PushConstants, 0, .{ .vertex_shader = true }),
         },
+        .shader_stages = .{ .vertex_shader = true, .fragment_shader = true },
     });
     defer Core.DestroyPipelineLayout(pipeline_layout);
 
@@ -346,9 +348,9 @@ pub fn main(init: std.process.Init) !void {
                         .stages = .{ .color_attachment = true },
                     },
                     .after = .{
-                        .access = .{},
+                        .access = .NONE,
                         .layout = .PRESENT,
-                        .stages = .{},
+                        .stages = .NONE,
                     },
                 },
             },
