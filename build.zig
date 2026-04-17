@@ -48,7 +48,6 @@ pub fn build(b: *std.Build) void {
     main_mod.addImport("nri", nri_dep.module("root"));
     main_mod.addImport("zglfw", zglfw_dep.module("root"));
     main_mod.addImport("zmath", zmath_dep.module("root"));
-    main_mod.linkLibrary(nri_dep.artifact("NRI"));
     main_mod.linkLibrary(zglfw_dep.artifact("glfw"));
 
     const exe = b.addExecutable(.{
